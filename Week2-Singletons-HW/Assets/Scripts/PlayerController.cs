@@ -9,6 +9,21 @@ public class PlayerController : MonoBehaviour
     public float force = 5;
     Rigidbody2D rb;
     public GameObject diamond;
+    public int score = 0;
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +38,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (gameObject.CompareTag("Ply1"))
+/*        if (gameObject.CompareTag("Ply1"))
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -44,7 +59,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(Vector2.down * force);
             }
-        }
+        }*/
 
         if (gameObject.CompareTag("Ply2"))
         {
@@ -68,6 +83,5 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.down * force);
             }
         }
-
     }
 }
