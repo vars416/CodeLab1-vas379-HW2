@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreKeeper: {fileID: 455812298}
-  timer: 50
+  timer: 40
 --- !u!1 &1596258767
 GameObject:
   m_ObjectHideFlags: 0

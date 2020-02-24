@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public GameObject diamond;
     public int score = 0;
-    public static PlayerController instance;
+    public static PlayerController instance; //make this a singleton
 
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;
+            instance = this; //set instance to this object
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -63,22 +63,22 @@ public class PlayerController : MonoBehaviour
 
         if (gameObject.CompareTag("Ply2"))
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 rb.AddForce(Vector2.right * force);
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A))
             {
                 rb.AddForce(Vector2.left * force);
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
             {
                 rb.AddForce(Vector2.up * force);
             }
 
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.S))
             {
                 rb.AddForce(Vector2.down * force);
             }

@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Text>();
+        GetComponentInChildren<Text>(); 
     }
 
     // Update is called once per frame
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         if (PlayerController.instance.score == 18)
         {
-            Destroy(ScoreKeeper);
+            Destroy(ScoreKeeper); //on reaching win screen, destroy timer and plalyer
             Destroy(PlayerController.instance.gameObject);
         }
     }

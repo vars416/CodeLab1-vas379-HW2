@@ -18,7 +18,7 @@ public class PrizeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Target = PlayerController.instance.score * 1 + 5;
+        Target = PlayerController.instance.score * 1 + 5; //set high score for each level after which level changes
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PrizeScript : MonoBehaviour
         if (collision.gameObject.tag == "Ply2")
         {
             //ScoreValue2 += 1;
-            PlayerController.instance.score++;
+            PlayerController.instance.score++; //increase score
         }
 
         if (PlayerController.instance.score > Target) //if the current score >  the targetScore
